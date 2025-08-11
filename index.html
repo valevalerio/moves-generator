@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎭 Dance Improvisation Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎭</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <div class="title-section">
+                    <h1 id="main-title">🎭 Improvisation Generator</h1>
+                    <p id="subtitle">Generate random combinations for dance improvisation</p>
+                </div>
+                <div class="header-controls">
+                    <div class="language-selector">
+                        <select id="language-select">
+                            <option value="en">English</option>
+                            <option value="it">Italiano</option>
+                        </select>
+                    </div>
+                    <button id="generate-btn" class="generate-button-header">
+                        🎲 Generate Random Improvisation
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="content-grid">
+                <aside class="sidebar">
+                    <h3 id="categories-title">Categories to include:</h3>
+                    <div class="category-list">
+                        <label class="category-item">
+                            <input type="checkbox" id="places" checked>
+                            <span id="places-label">Space Position</span>
+                        </label>
+                        <label class="category-item">
+                            <input type="checkbox" id="moving" checked>
+                            <span id="moving-label">Movement</span>
+                        </label>
+                        <label class="category-item">
+                            <input type="checkbox" id="positions" checked>
+                            <span id="positions-label">Audience Position</span>
+                        </label>
+                        <label class="category-item">
+                            <input type="checkbox" id="counts" checked>
+                            <span id="counts-label">Counts</span>
+                        </label>
+                        <label class="category-item">
+                            <input type="checkbox" id="emotions" checked>
+                            <span id="emotions-label">Emotions</span>
+                        </label>
+                        <label class="category-item">
+                            <input type="checkbox" id="organs" checked>
+                            <span id="organs-label">Body Parts</span>
+                        </label>
+                    </div>
+
+                    <div id="warning" class="warning" style="display: none;">
+                        Please select at least one category!
+                    </div>
+                </aside>
+
+                <div class="main-content">
+                    <div id="results" class="results-section" style="display: none;">
+                        <h2 id="results-title">Your Improvisation:</h2>
+                        <div id="results-content" class="wide-results"></div>
+                    </div>
+                    
+                    <div id="placeholder" class="placeholder-content">
+                        <div class="placeholder-icon">🎭</div>
+                        <h3>Ready to Generate!</h3>
+                        <p>Select your categories and click the generate button to create your dance improvisation combination.</p>
+                        <div class="feature-list">
+                            <div class="feature-item">✨ 100+ Dance Moves</div>
+                            <div class="feature-item">🎯 6 Categories</div>
+                            <div class="feature-item">🌍 Bilingual Support</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>🎭 Dance Improvisation Generator | Built with HTML, CSS & Claude Sonnet 4 ❤️</p>
+            <p>Based on the original work by <a href="https://sergeikaptelin.github.io/improvisation-generator/" target="_blank">Sergei Kaptelin</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
