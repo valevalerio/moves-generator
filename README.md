@@ -1,76 +1,78 @@
-# 🎭 Dance Improvisation Generator
+# Dance Improvisation Generator
 
-A multilingual dance improvisation generator with English and Italian language support. Available as both a web application and Python CLI tool.
+A dance improvisation tool for Lindy Hop and Jazz dancers. Generate random movement prompts to inspire your practice sessions. Available in English and Italian.
 
-## 🌐 Live Demo
+## Live Demo
 
-**Try it online**: [GitHub Pages Version](https://yourusername.github.io/) *(replace with your actual GitHub Pages URL)*
+Try it online: [GitHub Pages Version](https://yourusername.github.io/) *(replace with your actual GitHub Pages URL)*
 
-## 🚀 Quick Start
+## Getting Started
 
-### 🌐 GitHub Pages (Recommended)
-**No installation required!** Just visit the live demo link above.
-- ✅ Works on any device
-- ✅ No Python installation needed  
-- ✅ Fast loading
-- ✅ Works offline after first visit
+### Web Version (Recommended)
+The easiest way to use this tool is through the web interface - no installation required. Just visit the link above.
 
-### 💻 Local Streamlit App
+### Local Streamlit App
+If you prefer to run it locally:
 ```bash
 pip install streamlit
 streamlit run app_streamlit.py
 ```
-Then open your browser to `http://localhost:8501`
+Then open `http://localhost:8501` in your browser.
 
-### 🖥️ Command Line Interface  
+### Command Line Interface
+For command line usage:
 ```bash
 python improvisation_cli.py --interactive
 python improvisation_cli.py --language it --categories places emotions
 ```
 
-## 📁 Files
+## Project Structure
 
-### 🌐 GitHub Pages Version (No Installation Required)
+### Web Version
 - `index.html` - Main web page
-- `styles.css` - Modern CSS styling  
+- `styles.css` - Styling  
 - `script.js` - JavaScript functionality
-- `GITHUB_PAGES_GUIDE.md` - Deployment instructions
+- `GITHUB_PAGES_GUIDE.md` - Deployment guide
 
-### 💻 Python/Streamlit Version  
-- `app_streamlit.py` - Streamlit web application
-- `improvisation_cli.py` - Command line version
-- `requirements.txt` - Python dependencies
+### Python Version
+- `app_streamlit.py` - Streamlit web app
+- `improvisation_cli.py` - Command line tool
+- `requirements.txt` - Dependencies
 
-## ✨ Features
+## What It Does
 
-- **100+ Dance Moves**: Comprehensive collection of Lindy Hop/Jazz moves
-- **6 Categories**: Space position, movement, audience position, counts, emotions, body parts
-- **Multilingual**: English and Italian interface
-- **Simple Interface**: Easy-to-use web interface with Streamlit
+This tool helps dancers practice improvisation by generating random combinations of:
+- Spatial positions and movements
+- Audience positioning
+- Beat counts and timing
+- Emotional expressions
+- Body part focus
 
-## 🎯 Usage
+The database includes over 100 moves from Lindy Hop and Jazz dance styles.
 
-### 🌐 GitHub Pages (Easiest)
-1. Visit the live demo link above
-2. Select your preferred language (English/Italian)
-3. Choose categories to include
-4. Click "Generate Random Improvisation"
-5. Get instant results!
+## Usage
 
-### 💻 Local Python Version
-1. Install Python 3.7+
-2. Install requirements: `pip install -r requirements.txt`
-3. Run: `streamlit run app_streamlit.py`
-4. Select categories and generate your improvisation!
+### Web Interface
+1. Choose your language (English or Italian)
+2. Select which categories to include in your prompt
+3. Click generate to get a random combination
+4. Use the prompt to inspire your movement
 
-## 🚀 Deploy Your Own GitHub Pages Version
+### Python Version
+Install Python 3.7+ and the requirements, then run the Streamlit app. The interface works the same way as the web version.
 
-See the detailed guide: [`GITHUB_PAGES_GUIDE.md`](GITHUB_PAGES_GUIDE.md)
+## Deployment
 
-**Quick Deploy:**
+To deploy your own copy on GitHub Pages, see the guide in `GITHUB_PAGES_GUIDE.md`.
+
+Quick steps:
 1. Fork this repository
 2. Rename it to `yourusername.github.io`
-3. Enable GitHub Pages in repository settings
-4. Your site will be live at `https://yourusername.github.io/`
+3. Enable GitHub Pages in settings
+4. Access at `https://yourusername.github.io/`
+
+## Credits
+
+Based on the original work by [Sergei Kaptelin](https://sergeikaptelin.github.io/improvisation-generator/)
 
 Based on the original work by [Sergei Kaptelin](https://sergeikaptelin.github.io/improvisation-generator/)
