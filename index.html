@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎭 Dance Improvisation Generator</title>
+    <title>Dance Improvisation Generator</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎭</text></svg>">
 </head>
@@ -12,18 +12,26 @@
         <header>
             <div class="header-content">
                 <div class="title-section">
-                    <h1 id="main-title">🎭 Improvisation Generator</h1>
-                    <p id="subtitle">Generate random combinations for dance improvisation</p>
+                    <h1 id="main-title">🎭 Generatore di Improvvisazione</h1>
+                    <p id="subtitle">Genera combinazioni casuali per l'improvvisazione di danza</p>
                 </div>
                 <div class="header-controls">
                     <div class="language-selector">
                         <select id="language-select">
-                            <option value="en">English</option>
                             <option value="it">Italiano</option>
+                            <option value="en">English</option>
+                        </select>
+                    </div>
+                    <div class="color-theme-selector">
+                        <select id="color-theme-select">
+                            <option value="default">Tema Originale</option>
+                            <option value="warm">Tema Caldo</option>
+                            <option value="elegant">Tema Elegante</option>
+                            <option value="vibrant">Tema Vibrante</option>
                         </select>
                     </div>
                     <button id="generate-btn" class="generate-button-header">
-                        🎲 Generate Random Improvisation
+                        🎲 Genera Improvvisazione Casuale
                     </button>
                 </div>
             </div>
@@ -72,13 +80,13 @@
                     </div>
                     
                     <div id="placeholder" class="placeholder-content">
-                        <div class="placeholder-icon">🎭</div>
-                        <h3>Ready to Generate!</h3>
-                        <p>Select your categories and click the generate button to create your dance improvisation combination.</p>
+                        <div class="placeholder-icon">💃</div>
+                        <h3 id="placeholder-title">Pronto per Generare!</h3>
+                        <p id="placeholder-subtitle">Seleziona le categorie e clicca il pulsante per creare la tua combinazione di improvvisazione.</p>
                         <div class="feature-list">
-                            <div class="feature-item">✨ 100+ Dance Moves</div>
-                            <div class="feature-item">🎯 6 Categories</div>
-                            <div class="feature-item">🌍 Bilingual Support</div>
+                            <div class="feature-item" id="feature1">✨ 100+ Passi di Danza</div>
+                            <div class="feature-item" id="feature2">🎯 6 Categorie</div>
+                            <div class="feature-item" id="feature3">🌍 Supporto Bilingue</div>
                         </div>
                     </div>
                 </div>
@@ -86,8 +94,8 @@
         </main>
 
         <footer>
-            <p>🎭 Dance Improvisation Generator | Built with HTML, CSS & Claude Sonnet 4 ❤️</p>
-            <p>Based on the original work by <a href="https://sergeikaptelin.github.io/improvisation-generator/" target="_blank">Sergei Kaptelin</a></p>
+            <p id="footer-main">🎭 Generatore di Improvvisazione | Realizzato con HTML, CSS, JavaScript e Claude Sonnet 4 ❤️</p>
+            <p><span id="footer-credit">Basato sul lavoro originale di</span> <a href="https://sergeikaptelin.github.io/improvisation-generator/" target="_blank">Sergei Kaptelin</a></p>
         </footer>
     </div>
 

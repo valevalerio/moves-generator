@@ -52,7 +52,7 @@ CATEGORIES = {
 
 TITLES = {
     "en": {
-        "title": "🎭 Improvisation Generator",
+        "title": "Improvisation Generator",
         "subtitle": "Generate random combinations for dance improvisation",
         "language": "Language",
         "categories": "Categories to include:",
@@ -67,7 +67,7 @@ TITLES = {
         "organs": "Body Parts"
     },
     "it": {
-        "title": "🎭 Generatore di Improvvisazione",
+        "title": "Generatore di Improvvisazione",
         "subtitle": "Genera combinazioni casuali per l'improvvisazione di danza",
         "language": "Lingua",
         "categories": "Categorie da includere:",
@@ -104,7 +104,7 @@ def main():
     # Page config
     st.set_page_config(
         page_title="Improvisation Generator",
-        page_icon="🎭",
+        page_icon="💃", # or better the dancer emoji: 💃
         layout="wide"
     )
     

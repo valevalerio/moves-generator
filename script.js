@@ -57,14 +57,31 @@ const TITLES = {
         "categories": "Categories to include:",
         "generate": "🎲 Generate Random Improvisation",
         "result": "Your Improvisation:",
-        "moves": "🕺 Moves",
+        "moves": "Moves",
         "places": "Space Position", 
         "moving": "Movement",
         "positions": "Audience Position",
         "counts": "Counts",
         "emotions": "Emotions",
         "organs": "Body Parts",
-        "warning": "Please select at least one category!"
+        "warning": "Please select at least one category!",
+        "themes": {
+            "default": "Original Theme",
+            "warm": "Warm Theme",
+            "elegant": "Elegant Theme",
+            "vibrant": "Vibrant Theme"
+        },
+        "placeholder": {
+            "title": "Ready to Generate!",
+            "subtitle": "Select your categories and click the generate button to create your dance improvisation combination.",
+            "feature1": "✨ 100+ Dance Moves",
+            "feature2": "🎯 6 Categories", 
+            "feature3": "🌍 Bilingual Support"
+        },
+        "footer": {
+            "main": "🎭 Dance Improvisation Generator | Built with HTML, CSS, JavaScript and Claude Sonnet 4 ❤️",
+            "credit": "Based on the original work by"
+        }
     },
     "it": {
         "title": "🎭 Generatore di Improvvisazione",
@@ -73,19 +90,37 @@ const TITLES = {
         "categories": "Categorie da includere:",
         "generate": "🎲 Genera Improvvisazione Casuale",
         "result": "La Tua Improvvisazione:",
-        "moves": "🕺 Movimenti",
+        "moves": "Movimenti",
         "places": "Posizione nello Spazio",
         "moving": "Movimento",
         "positions": "Posizione verso il Pubblico",
         "counts": "Conteggi",
         "emotions": "Emozioni",
         "organs": "Parti del Corpo",
-        "warning": "Seleziona almeno una categoria!"
+        "warning": "Seleziona almeno una categoria!",
+        "themes": {
+            "default": "Tema Originale",
+            "warm": "Tema Caldo",
+            "elegant": "Tema Elegante",
+            "vibrant": "Tema Vibrante"
+        },
+        "placeholder": {
+            "title": "Pronto per Generare!",
+            "subtitle": "Seleziona le categorie e clicca il pulsante per creare la tua combinazione di improvvisazione.",
+            "feature1": "✨ 100+ Passi di Danza",
+            "feature2": "🎯 6 Categorie",
+            "feature3": "🌍 Supporto Bilingue"
+        },
+        "footer": {
+            "main": "🎭 Generatore di Improvvisazione | Realizzato con HTML, CSS, JavaScript e Claude Sonnet 4 ❤️",
+            "credit": "Basato sul lavoro originale di"
+        }
     }
 };
 
-// Current language
-let currentLanguage = 'en';
+// Current language and theme
+let currentLanguage = 'it'; // Default to Italian
+let currentTheme = 'default';
 
 // Utility functions
 function getRandomSample(array, count) {
@@ -144,8 +179,50 @@ function updateLanguage(language) {
     // Update warning text
     document.getElementById('warning').textContent = titles.warning;
     
+    // Update placeholder content
+    document.getElementById('placeholder-title').textContent = titles.placeholder.title;
+    document.getElementById('placeholder-subtitle').textContent = titles.placeholder.subtitle;
+    document.getElementById('feature1').textContent = titles.placeholder.feature1;
+    document.getElementById('feature2').textContent = titles.placeholder.feature2;
+    document.getElementById('feature3').textContent = titles.placeholder.feature3;
+    
+    // Update footer
+    document.getElementById('footer-main').textContent = titles.footer.main;
+    document.getElementById('footer-credit').textContent = titles.footer.credit;
+    
+    // Update theme selector options
+    updateThemeOptions(language);
+    
     // Clear results when language changes
     document.getElementById('results').style.display = 'none';
+}
+
+function updateThemeOptions(language) {
+    const themeSelect = document.getElementById('color-theme-select');
+    const themes = TITLES[language].themes;
+    
+    themeSelect.innerHTML = '';
+    Object.keys(themes).forEach(themeKey => {
+        const option = document.createElement('option');
+        option.value = themeKey;
+        option.textContent = themes[themeKey];
+        if (themeKey === currentTheme) {
+            option.selected = true;
+        }
+        themeSelect.appendChild(option);
+    });
+}
+
+function changeTheme(theme) {
+    currentTheme = theme;
+    
+    // Remove existing theme
+    document.body.removeAttribute('data-theme');
+    
+    // Apply new theme if not default
+    if (theme !== 'default') {
+        document.body.setAttribute('data-theme', theme);
+    }
 }
 
 function displayResults(result, language) {
@@ -235,6 +312,12 @@ document.addEventListener('DOMContentLoaded', function() {
         updateLanguage(this.value);
     });
     
+    // Color theme selector
+    const themeSelect = document.getElementById('color-theme-select');
+    themeSelect.addEventListener('change', function() {
+        changeTheme(this.value);
+    });
+    
     // Generate button
     const generateBtn = document.getElementById('generate-btn');
     generateBtn.addEventListener('click', function() {
@@ -251,14 +334,10 @@ document.addEventListener('DOMContentLoaded', function() {
         displayResults(result, currentLanguage);
     });
     
-    // Initialize with default language
-    updateLanguage('en');
-});
-
-// Add some visual feedback for button clicks
-document.addEventListener('DOMContentLoaded', function() {
-    const generateBtn = document.getElementById('generate-btn');
+    // Initialize with default language (Italian)
+    updateLanguage('it');
     
+    // Add visual feedback for button clicks
     generateBtn.addEventListener('click', function() {
         // Add loading effect
         this.style.transform = 'scale(0.95)';

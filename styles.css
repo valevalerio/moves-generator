@@ -1,5 +1,66 @@
 /* Modern CSS for Dance Improvisation Generator */
 
+/* ========================================
+   🎨 COLOR PALETTE - CHANGE COLORS HERE!
+   ======================================== */
+:root {
+    /* Main Theme Colors - Default */
+    --primary-color: #667eea;          /* Main blue-purple */
+    --secondary-color: #764ba2;        /* Darker purple */
+    
+    /* Text Colors */
+    --text-dark: #4a5568;              /* Dark gray text */
+    --text-medium: #718096;            /* Medium gray text */
+    --text-light: #333;                /* Body text */
+    
+    /* Background Colors */
+    --bg-white: rgba(255, 255, 255, 0.95);
+    --bg-accent: rgba(102, 126, 234, 0.1);
+    --bg-hover: rgba(102, 126, 234, 0.1);
+    
+    /* Border Colors */
+    --border-light: #e2e8f0;
+    --border-accent: rgba(102, 126, 234, 0.1);
+    
+    /* State Colors */
+    --warning-bg: #fed7d7;
+    --warning-text: #c53030;
+    --warning-border: #c53030;
+}
+
+/* ========================================
+   🎨 COLOR THEMES
+   ======================================== */
+
+/* Warm Theme */
+[data-theme="warm"] {
+    --primary-color: #e74c3c;          /* Red */
+    --secondary-color: #f39c12;        /* Orange */
+    --bg-accent: rgba(231, 76, 60, 0.1);
+    --bg-hover: rgba(231, 76, 60, 0.1);
+    --border-accent: rgba(231, 76, 60, 0.1);
+}
+
+/* Elegant Theme */
+[data-theme="elegant"] {
+    --primary-color: #2c3e50;          /* Dark blue */
+    --secondary-color: #34495e;        /* Slate */
+    --bg-accent: rgba(44, 62, 80, 0.1);
+    --bg-hover: rgba(44, 62, 80, 0.1);
+    --border-accent: rgba(44, 62, 80, 0.1);
+}
+
+/* Vibrant Theme */
+[data-theme="vibrant"] {
+    --primary-color: #e91e63;          /* Pink */
+    --secondary-color: #9c27b0;        /* Purple */
+    --bg-accent: rgba(233, 30, 99, 0.1);
+    --bg-hover: rgba(233, 30, 99, 0.1);
+    --border-accent: rgba(233, 30, 99, 0.1);
+}
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -9,8 +70,8 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.4;
-    color: #333;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--text-light);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     min-height: 100vh;
     margin: 0;
     padding: 0;
@@ -27,7 +88,7 @@ body {
 
 /* Header */
 header {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--bg-white);
     border-radius: 16px;
     padding: 24px 32px;
     margin-bottom: 24px;
@@ -43,13 +104,13 @@ header {
 }
 
 .title-section {
-    flex: 1;
+    flex: 3;
     text-align: left;
 }
 
 .title-section h1 {
     font-size: 2.88rem;
-    color: #4a5568;
+    color: var(--text-dark);
     font-weight: 700;
     margin: 0 0 8px 0;
     text-align: left;
@@ -57,7 +118,7 @@ header {
 
 .title-section #subtitle {
     font-size: 1.6rem;
-    color: #718096;
+    color: var(--text-medium);
     font-style: italic;
     margin: 0;
     text-align: left;
@@ -67,12 +128,13 @@ header {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 16px;
+    gap: 12px;
+    flex: 1;
 }
 
 .language-selector select {
     padding: 10px 16px;
-    border: 2px solid #e2e8f0;
+    border: 2px solid var(--border-light);
     border-radius: 10px;
     background: white;
     font-size: 1.44rem;
@@ -81,11 +143,25 @@ header {
 }
 
 .language-selector select:hover {
-    border-color: #667eea;
+    border-color: var(--primary-color);
+}
+
+.color-theme-selector select {
+    padding: 10px 16px;
+    border: 2px solid var(--border-light);
+    border-radius: 10px;
+    background: white;
+    font-size: 1.44rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.color-theme-selector select:hover {
+    border-color: var(--primary-color);
 }
 
 .generate-button-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
     border: none;
     padding: 16px 26px;
@@ -123,7 +199,7 @@ main {
 
 /* Sidebar */
 .sidebar {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--bg-white);
     border-radius: 16px;
     padding: 24px;
     height: fit-content;
@@ -133,7 +209,7 @@ main {
 
 .sidebar h3 {
     margin-bottom: 16px;
-    color: #4a5568;
+    color: var(--text-dark);
     font-size: 1.6rem;
     margin-top: 0;
 }
@@ -154,32 +230,32 @@ main {
 }
 
 .category-item:hover {
-    background: rgba(102, 126, 234, 0.1);
+    background: var(--bg-hover);
 }
 
 .category-item input[type="checkbox"] {
     margin-right: 13px;
     transform: scale(1.6);
-    accent-color: #667eea;
+    accent-color: var(--primary-color);
 }
 
 .category-item span {
     font-size: 1.36rem;
-    color: #4a5568;
+    color: var(--text-dark);
     font-weight: 500;
     line-height: 1.2;
 }
 
 /* Main Content Area */
 .main-content {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--bg-white);
     border-radius: 16px;
     padding: 24px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
-    min-height: 640px;
+    min-height: 480px;
 }
 
 .generate-section {
@@ -188,7 +264,7 @@ main {
 }
 
 .generate-button {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
     border: none;
     padding: 29px 64px;
@@ -221,10 +297,10 @@ main {
 /* Moves section takes narrow first column */
 .moves-category {
     grid-column: 1;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    background: linear-gradient(135deg, var(--bg-accent) 0%, rgba(118, 75, 162, 0.1) 100%);
     padding: 19px;
     border-radius: 13px;
-    border-left: 6px solid #667eea;
+    border-left: 6px solid var(--primary-color);
 }
 
 .moves-category .result-list {
@@ -256,12 +332,12 @@ main {
     padding: 13px;
     background: rgba(102, 126, 234, 0.05);
     border-radius: 10px;
-    border-left: 5px solid #667eea;
+    border-left: 5px solid var(--primary-color);
     height: fit-content;
 }
 
 .result-category h3 {
-    color: #667eea;
+    color: var(--primary-color);
     margin-bottom: 10px;
     font-size: 1.36rem;
     display: flex;
@@ -278,8 +354,8 @@ main {
 .result-list li {
     padding: 3px 0;
     font-size: 1.2rem;
-    color: #4a5568;
-    border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+    color: var(--text-dark);
+    border-bottom: 1px solid var(--border-accent);
     line-height: 1.2;
 }
 
@@ -289,7 +365,7 @@ main {
 
 .result-list li::before {
     content: '•';
-    color: #667eea;
+    color: var(--primary-color);
     font-weight: bold;
     margin-right: 8px;
 }
@@ -301,7 +377,7 @@ main {
 .moves-list li::before {
     content: counter(moves-counter) '.';
     counter-increment: moves-counter;
-    color: #667eea;
+    color: var(--primary-color);
     font-weight: bold;
     margin-right: 8px;
 }
@@ -357,11 +433,11 @@ main {
 
 /* Warning */
 .warning {
-    background: #fed7d7;
-    color: #c53030;
+    background: var(--warning-bg);
+    color: var(--warning-text);
     padding: 8px;
     border-radius: 6px;
-    border-left: 3px solid #c53030;
+    border-left: 3px solid var(--warning-border);
     text-align: center;
     font-weight: 500;
     font-size: 0.8rem;
@@ -370,19 +446,19 @@ main {
 
 /* Footer */
 footer {
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--bg-white);
     border-radius: 10px;
     padding: 10px;
     margin-top: 15px;
     text-align: center;
-    color: #718096;
+    color: var(--text-medium);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(10px);
     font-size: 0.8rem;
 }
 
 footer a {
-    color: #667eea;
+    color: var(--primary-color);
     text-decoration: none;
 }
 
