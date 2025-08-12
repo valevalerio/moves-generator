@@ -1,5 +1,4 @@
-# Dance Improvisation Generator
-
+## Visit [Dance Improvisation Generator](https://valevalerio.github.io/moves-generator/)
 A web-based tool for Lindy Hop and Jazz dancers to generate random movement prompts for improvisation practice. Features bilingual support (English/Italian) and multiple categories of dance elements.
 
 ## Try It Live
@@ -55,10 +54,6 @@ streamlit run app_streamlit.py
 python improvisation_cli.py --interactive
 python improvisation_cli.py --language it --categories places emotions
 ```
-
-## Deployment
-
-Want to host this online? See the complete guide in `GITHUB_PAGES_GUIDE.md` for step-by-step instructions on deploying to GitHub Pages.
 
 ## Credits
 
